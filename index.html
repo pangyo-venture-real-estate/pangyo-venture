@@ -6,9 +6,11 @@
 <title>판교벤처부동산 | 판교테크노밸리 상가·사무실 매매·임대</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0f1f3d;--navy2:#1a3060;--gold:#c9a84c;--cream:#f8f4ee;--white:#fff;--gray:#6b7280;--light-gray:#f1ede6;--text:#1a1a2e;--sidebar-w:220px;--red:#e05c2a;}
+:root{--navy:#0f1f3d;--navy2:#1a3060;--gold:#c9a84c;--cream:#f8f4ee;--white:#fff;--gray:#6b7280;--light-gray:#f1ede6;--text:#1a1a2e;--sidebar-w:230px;--red:#e05c2a;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--text);}
+
+/* HEADER */
 header{background:var(--navy);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;position:fixed;top:0;left:0;right:0;z-index:200;border-bottom:2px solid var(--gold);}
 .logo{font-family:'Noto Serif KR',serif;color:var(--gold);font-size:1.2rem;font-weight:700;cursor:pointer;}
 .logo small{display:block;color:rgba(255,255,255,.5);font-size:.72rem;font-family:'Noto Sans KR',sans-serif;font-weight:300;letter-spacing:1px;}
@@ -17,26 +19,55 @@ header{background:var(--navy);height:64px;display:flex;align-items:center;justif
 .header-tel span{color:var(--gold);font-weight:700;display:block;}
 .admin-btn{background:transparent;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.6);padding:6px 14px;font-size:.78rem;cursor:pointer;font-family:'Noto Sans KR',sans-serif;transition:all .2s;}
 .admin-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+/* LAYOUT */
 .layout{display:flex;margin-top:64px;min-height:calc(100vh - 64px);}
+
+/* SIDEBAR */
 .sidebar{width:var(--sidebar-w);background:var(--navy);position:fixed;top:64px;left:0;bottom:0;overflow-y:auto;z-index:100;border-right:1px solid rgba(201,168,76,.2);}
-.sidebar-section{padding:1.2rem 0 .5rem;}
-.sidebar-label{font-size:.68rem;color:rgba(255,255,255,.35);letter-spacing:2px;padding:0 1.2rem;margin-bottom:.5rem;text-transform:uppercase;}
-.sidebar-item{display:flex;align-items:center;gap:10px;padding:10px 1.2rem;cursor:pointer;color:rgba(255,255,255,.65);font-size:.88rem;border-left:3px solid transparent;transition:all .15s;}
+.sidebar::-webkit-scrollbar{width:4px;}
+.sidebar::-webkit-scrollbar-thumb{background:rgba(201,168,76,.3);border-radius:2px;}
+.sidebar-section{padding:1rem 0 .5rem;}
+.sidebar-label{font-size:.65rem;color:rgba(255,255,255,.3);letter-spacing:2px;padding:0 1rem;margin-bottom:.4rem;text-transform:uppercase;}
+.sidebar-item{display:flex;align-items:center;gap:8px;padding:8px 1rem;cursor:pointer;color:rgba(255,255,255,.65);font-size:.84rem;border-left:3px solid transparent;transition:all .15s;}
 .sidebar-item:hover{background:rgba(255,255,255,.05);color:var(--white);}
 .sidebar-item.active{background:rgba(201,168,76,.12);color:var(--gold);border-left-color:var(--gold);font-weight:500;}
-.sidebar-item .icon{font-size:1rem;width:20px;text-align:center;}
-.sidebar-divider{height:1px;background:rgba(255,255,255,.07);margin:.5rem 1.2rem;}
-.sidebar-count{margin-left:auto;background:rgba(201,168,76,.2);color:var(--gold);font-size:.7rem;padding:2px 7px;border-radius:10px;}
+.sidebar-item .icon{font-size:.95rem;width:18px;text-align:center;flex-shrink:0;}
+.sidebar-divider{height:1px;background:rgba(255,255,255,.07);margin:.4rem 1rem;}
+.sidebar-count{margin-left:auto;background:rgba(201,168,76,.2);color:var(--gold);font-size:.68rem;padding:1px 6px;border-radius:10px;flex-shrink:0;}
+
+/* 환산기 위젯 */
+.calc-widget{margin:0 .8rem .8rem;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);padding:.9rem;border-radius:2px;}
+.calc-widget h4{font-size:.75rem;color:var(--gold);margin-bottom:.6rem;letter-spacing:.5px;}
+.calc-row{display:flex;gap:.4rem;align-items:center;margin-bottom:.4rem;}
+.calc-input{flex:1;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:var(--white);padding:5px 8px;font-size:.82rem;font-family:'Noto Sans KR',sans-serif;outline:none;min-width:0;}
+.calc-input::placeholder{color:rgba(255,255,255,.35);}
+.calc-unit{font-size:.75rem;color:rgba(255,255,255,.5);white-space:nowrap;}
+.calc-result{background:rgba(0,0,0,.2);padding:5px 8px;font-size:.82rem;color:var(--gold-light,#e8c97a);font-weight:500;text-align:center;min-height:28px;display:flex;align-items:center;justify-content:center;}
+
+/* 부동산 링크 위젯 */
+.link-widget{margin:0 .8rem .8rem;border:1px solid rgba(255,255,255,.1);overflow:hidden;}
+.link-widget-title{background:rgba(255,255,255,.07);padding:.5rem 1rem;font-size:.7rem;color:rgba(255,255,255,.5);letter-spacing:1px;text-transform:uppercase;}
+.link-grid{display:grid;grid-template-columns:1fr 1fr;}
+.link-item{padding:.55rem .6rem;font-size:.75rem;color:rgba(255,255,255,.6);cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:.3rem;border:none;background:none;font-family:'Noto Sans KR',sans-serif;transition:all .15s;border-bottom:1px solid rgba(255,255,255,.05);border-right:1px solid rgba(255,255,255,.05);}
+.link-item:hover{background:rgba(201,168,76,.1);color:var(--gold);}
+.link-item .li{font-size:.8rem;}
+
+/* MAIN */
 .main{margin-left:var(--sidebar-w);flex:1;padding:2rem;}
+
+/* QUICK LINKS */
 .quick-links{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem;}
-.quick-box{background:var(--white);border:1px solid #ece8e0;padding:1.4rem 1.2rem;display:flex;align-items:center;gap:1rem;cursor:pointer;transition:all .2s;}
+.quick-box{background:var(--white);border:1px solid #ece8e0;padding:1.2rem 1rem;display:flex;align-items:center;gap:.9rem;cursor:pointer;transition:all .2s;}
 .quick-box:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 6px 20px rgba(15,31,61,.1);}
-.qicon{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+.qicon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
 .qicon-find{background:rgba(201,168,76,.15);}
 .qicon-list{background:rgba(15,31,61,.08);}
 .qicon-blog{background:rgba(3,199,90,.1);}
-.qtitle{font-family:'Noto Serif KR',serif;font-size:.95rem;font-weight:600;color:var(--navy);display:block;}
-.qdesc{font-size:.75rem;color:var(--gray);display:block;margin-top:2px;}
+.qtitle{font-family:'Noto Serif KR',serif;font-size:.92rem;font-weight:600;color:var(--navy);display:block;}
+.qdesc{font-size:.73rem;color:var(--gray);display:block;margin-top:2px;}
+
+/* HERO */
 .hero{background:linear-gradient(120deg,var(--navy) 0%,var(--navy2) 60%,#0d1830 100%);border-radius:2px;padding:2.5rem;margin-bottom:1.5rem;position:relative;overflow:hidden;}
 .hero::after{content:'';position:absolute;right:-60px;top:-60px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(201,168,76,.15);}
 .hero-badge{display:inline-block;background:rgba(201,168,76,.18);border:1px solid var(--gold);color:var(--gold);font-size:.75rem;padding:5px 14px;border-radius:20px;margin-bottom:.8rem;letter-spacing:1px;}
@@ -46,14 +77,20 @@ header{background:var(--navy);height:64px;display:flex;align-items:center;justif
 .hero-stats{display:flex;gap:2.5rem;}
 .stat-num{font-family:'Noto Serif KR',serif;font-size:1.5rem;color:var(--gold);display:block;}
 .stat-label{font-size:.73rem;color:rgba(255,255,255,.45);}
+
+/* SECTION HEADER */
 .sec-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;}
 .sec-title{font-family:'Noto Serif KR',serif;font-size:1.2rem;color:var(--navy);}
 .sec-title small{display:block;font-size:.73rem;font-family:'Noto Sans KR',sans-serif;color:var(--gold);letter-spacing:1px;margin-bottom:3px;}
+
+/* FILTER */
 .filter-bar{background:var(--white);padding:.8rem 1rem;margin-bottom:1.2rem;display:flex;gap:.7rem;align-items:center;flex-wrap:wrap;border:1px solid #ece8e0;}
 .filter-bar select,.filter-bar input{padding:8px 12px;border:1px solid #ddd;font-family:'Noto Sans KR',sans-serif;font-size:.85rem;background:var(--cream);color:var(--text);outline:none;}
 .filter-bar select:focus,.filter-bar input:focus{border-color:var(--gold);}
 .filter-btn{background:var(--navy);color:var(--white);border:none;padding:8px 18px;font-family:'Noto Sans KR',sans-serif;font-size:.85rem;cursor:pointer;}
 .filter-btn:hover{background:var(--gold);color:var(--navy);}
+
+/* PROPERTY GRID */
 .property-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.2rem;}
 .prop-card{background:var(--white);border:1px solid #ece8e0;transition:transform .2s,box-shadow .2s;cursor:pointer;overflow:hidden;}
 .prop-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(15,31,61,.1);}
@@ -75,6 +112,8 @@ header{background:var(--navy);height:64px;display:flex;align-items:center;justif
 .empty-state{text-align:center;padding:5rem 0;color:var(--gray);grid-column:1/-1;}
 .empty-state .big{font-size:3rem;margin-bottom:1rem;}
 .empty-state p{font-size:.9rem;line-height:1.8;}
+
+/* CONTACT / FORM */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
 .contact-box{background:var(--white);padding:1.8rem;border:1px solid #ece8e0;}
 .contact-box h3{font-family:'Noto Serif KR',serif;font-size:1.1rem;color:var(--navy);margin-bottom:1.2rem;}
@@ -88,6 +127,8 @@ header{background:var(--navy);height:64px;display:flex;align-items:center;justif
 .form-row2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
 .submit-btn{width:100%;background:var(--navy);color:var(--white);border:none;padding:12px;font-family:'Noto Sans KR',sans-serif;font-size:.9rem;font-weight:500;cursor:pointer;transition:background .2s;}
 .submit-btn:hover{background:var(--gold);color:var(--navy);}
+
+/* ADMIN */
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:500;align-items:center;justify-content:center;}
 .overlay.show{display:flex;}
 .modal{background:var(--white);width:min(560px,95vw);max-height:90vh;overflow-y:auto;padding:2rem;position:relative;}
@@ -120,12 +161,23 @@ header{background:var(--navy);height:64px;display:flex;align-items:center;justif
 .cab{flex:1;padding:6px;border:none;font-family:'Noto Sans KR',sans-serif;font-size:.78rem;cursor:pointer;font-weight:500;}
 .cab-edit{background:var(--navy);color:var(--white);}
 .cab-del{background:#fdecea;color:var(--red);}
+
+/* FOOTER */
 footer{background:#080f1e;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,76,.3);margin-left:var(--sidebar-w);}
 .footer-logo{font-family:'Noto Serif KR',serif;color:var(--gold);font-size:1.1rem;margin-bottom:.5rem;text-align:center;}
 .footer-info{color:rgba(255,255,255,.35);font-size:.75rem;line-height:2.2;text-align:center;}
 .footer-info a{color:rgba(255,255,255,.45);text-decoration:none;}
 .footer-divider{height:1px;background:rgba(255,255,255,.07);margin:.8rem auto;max-width:600px;}
-@media(max-width:768px){:root{--sidebar-w:0px;}.sidebar{display:none;}.contact-grid,.form-row2{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}footer{margin-left:0;}.admin-bar{left:0;}.quick-links{grid-template-columns:1fr;}}
+
+@media(max-width:768px){
+  :root{--sidebar-w:0px;}
+  .sidebar{display:none;}
+  .contact-grid,.form-row2{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  footer{margin-left:0;}
+  .admin-bar{left:0;}
+  .quick-links{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
@@ -153,40 +205,88 @@ footer{background:#080f1e;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
 </div>
 
 <div class="layout">
+
+  <!-- ══ SIDEBAR ══ -->
   <aside class="sidebar">
     <div class="sidebar-section">
+
+      <!-- 전체 -->
       <div class="sidebar-label">매물 분류</div>
       <div class="sidebar-item active" onclick="setCategory('all',this)">
         <span class="icon">🏠</span> 전체 매물
         <span class="sidebar-count" id="cnt-all">0</span>
       </div>
+
       <div class="sidebar-divider"></div>
+
+      <!-- 사무실 -->
       <div class="sidebar-label">사무실</div>
-      <div class="sidebar-item" onclick="setCategory('office-s',this)">
+      <div class="sidebar-item" onclick="setCategory('office-xs',this)">
         <span class="icon">📋</span> 30평 미만
+        <span class="sidebar-count" id="cnt-office-xs">0</span>
+      </div>
+      <div class="sidebar-item" onclick="setCategory('office-s',this)">
+        <span class="icon">📋</span> 30평 ~ 60평
         <span class="sidebar-count" id="cnt-office-s">0</span>
       </div>
       <div class="sidebar-item" onclick="setCategory('office-m',this)">
-        <span class="icon">📋</span> 30평 ~ 100평
+        <span class="icon">📋</span> 61평 ~ 100평
         <span class="sidebar-count" id="cnt-office-m">0</span>
       </div>
       <div class="sidebar-item" onclick="setCategory('office-l',this)">
-        <span class="icon">📋</span> 100평 이상
+        <span class="icon">📋</span> 100평 ~ 200평
         <span class="sidebar-count" id="cnt-office-l">0</span>
       </div>
-      <div class="sidebar-divider"></div>
-      <div class="sidebar-label">상가</div>
-      <div class="sidebar-item" onclick="setCategory('store',this)">
-        <span class="icon">🏪</span> 상가
-        <span class="sidebar-count" id="cnt-store">0</span>
+      <div class="sidebar-item" onclick="setCategory('office-xl',this)">
+        <span class="icon">📋</span> 200평 이상
+        <span class="sidebar-count" id="cnt-office-xl">0</span>
       </div>
+
       <div class="sidebar-divider"></div>
+
+      <!-- 상가 -->
+      <div class="sidebar-label">상가</div>
+      <div class="sidebar-item" onclick="setCategory('store-us1',this)">
+        <span class="icon">🏪</span> 유스페이스 1
+        <span class="sidebar-count" id="cnt-store-us1">0</span>
+      </div>
+      <div class="sidebar-item" onclick="setCategory('store-us2',this)">
+        <span class="icon">🏪</span> 유스페이스 2
+        <span class="sidebar-count" id="cnt-store-us2">0</span>
+      </div>
+      <div class="sidebar-item" onclick="setCategory('store-hsn',this)">
+        <span class="icon">🏪</span> H스퀘어 (북)
+        <span class="sidebar-count" id="cnt-store-hsn">0</span>
+      </div>
+      <div class="sidebar-item" onclick="setCategory('store-hss',this)">
+        <span class="icon">🏪</span> H스퀘어 (남)
+        <span class="sidebar-count" id="cnt-store-hss">0</span>
+      </div>
+      <div class="sidebar-item" onclick="setCategory('store-sha',this)">
+        <span class="icon">🏪</span> 삼환하이펙스 A동
+        <span class="sidebar-count" id="cnt-store-sha">0</span>
+      </div>
+      <div class="sidebar-item" onclick="setCategory('store-shb',this)">
+        <span class="icon">🏪</span> 삼환하이펙스 B동
+        <span class="sidebar-count" id="cnt-store-shb">0</span>
+      </div>
+      <div class="sidebar-item" onclick="setCategory('store-etc',this)">
+        <span class="icon">🏪</span> 기타 상가
+        <span class="sidebar-count" id="cnt-store-etc">0</span>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <!-- 빌딩 -->
       <div class="sidebar-label">빌딩</div>
       <div class="sidebar-item" onclick="setCategory('building',this)">
         <span class="icon">🏢</span> 빌딩
         <span class="sidebar-count" id="cnt-building">0</span>
       </div>
+
       <div class="sidebar-divider"></div>
+
+      <!-- 의뢰/기타 -->
       <div class="sidebar-label">의뢰 / 기타</div>
       <div class="sidebar-item" onclick="showPage('find')">
         <span class="icon">🔍</span> 구하기 의뢰
@@ -197,12 +297,44 @@ footer{background:#080f1e;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
       <div class="sidebar-item" onclick="showPage('contact')">
         <span class="icon">📞</span> 문의·상담
       </div>
-      <div class="sidebar-item" onclick="window.open('https://blog.naver.com/vt8016','_blank')">
+      <div class="sidebar-item" onclick="window.open('https://blog.naver.com/vt9300','_blank')">
         <span class="icon">📰</span> 블로그
       </div>
+
+      <div class="sidebar-divider"></div>
+
+      <!-- ㎡ ↔ 평 환산기 -->
+      <div class="calc-widget">
+        <h4>㎡ ↔ 평 환산기</h4>
+        <div class="calc-row">
+          <input class="calc-input" type="number" id="calcM2" placeholder="㎡ 입력" oninput="calcFrom('m2')">
+          <span class="calc-unit">㎡</span>
+        </div>
+        <div class="calc-row">
+          <input class="calc-input" type="number" id="calcPyeong" placeholder="평 입력" oninput="calcFrom('p')">
+          <span class="calc-unit">평</span>
+        </div>
+        <div class="calc-result" id="calcResult">숫자를 입력하세요</div>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <!-- 부동산 링크 -->
+      <div class="link-widget">
+        <div class="link-widget-title">🔗 부동산 링크</div>
+        <div class="link-grid">
+          <a class="link-item" href="https://www.iros.go.kr" target="_blank"><span class="li">📄</span>등기부등본</a>
+          <a class="link-item" href="https://www.hometax.go.kr" target="_blank"><span class="li">💰</span>양도소득세</a>
+          <a class="link-item" href="https://www.gov.kr" target="_blank"><span class="li">🏛️</span>민원 24</a>
+          <a class="link-item" href="https://www.eum.go.kr" target="_blank"><span class="li">🗺️</span>토지이음</a>
+          <a class="link-item" href="https://www.eais.go.kr" target="_blank" style="border-right:none"><span class="li">🏗️</span>세움터</a>
+        </div>
+      </div>
+
     </div>
   </aside>
 
+  <!-- ══ MAIN ══ -->
   <main class="main" id="mainArea">
 
     <!-- 홈 -->
@@ -216,11 +348,12 @@ footer{background:#080f1e;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
           <div class="qicon qicon-list">📝</div>
           <div><span class="qtitle">내놓기 의뢰</span><span class="qdesc">보유 매물을 등록해 드립니다</span></div>
         </div>
-        <div class="quick-box" onclick="window.open('https://blog.naver.com/vt8016','_blank')">
+        <div class="quick-box" onclick="window.open('https://blog.naver.com/vt9300','_blank')">
           <div class="qicon qicon-blog">📰</div>
           <div><span class="qtitle">판교벤처 블로그</span><span class="qdesc">최신 시장 정보 · 매물 소식</span></div>
         </div>
       </div>
+
       <div class="hero">
         <div class="hero-badge">판교테크노밸리 상가·사무실 매매·임대 전문</div>
         <h1>판교테크노밸리<br><em>상가·사무실</em> 매매·임대</h1>
@@ -231,6 +364,7 @@ footer{background:#080f1e;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
           <div><span class="stat-num">500+</span><span class="stat-label">계약 완료</span></div>
         </div>
       </div>
+
       <div class="filter-bar">
         <select id="filterType" onchange="renderCurrent()">
           <option value="">거래 구분 전체</option>
@@ -240,6 +374,7 @@ footer{background:#080f1e;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
         <input type="text" id="filterKeyword" placeholder="키워드 검색 (지역, 건물명...)" style="flex:1;min-width:160px" oninput="renderCurrent()">
         <button class="filter-btn" onclick="resetFilter()">초기화</button>
       </div>
+
       <div class="sec-header">
         <div class="sec-title"><small>LISTINGS</small><span id="currentCategoryLabel">전체 매물</span></div>
         <div style="font-size:.82rem;color:var(--gray)"><span id="resultCount">0</span>건</div>
@@ -253,7 +388,7 @@ footer{background:#080f1e;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
       <div class="contact-grid">
         <div class="contact-box">
           <h3>원하시는 매물 조건을 알려주세요</h3>
-          <p style="font-size:.85rem;color:var(--gray);line-height:1.8;margin-bottom:1.2rem;">조건에 맞는 매물을 찾아 빠르게 연락드립니다.</p>
+          <p style="font-size:.85rem;color:var(--gray);line-height:1.8;margin-bottom:1.2rem;">조건에 맞는 매물을 찾아 빠르게 연락드립니다.<br>구체적으로 작성해주실수록 더 정확한 매물을 추천해드립니다.</p>
           <div class="contact-row"><div class="c-icon">📞</div><div class="c-text"><strong>전화 상담</strong>031-8016-9300<br>평일·주말 09:00 ~ 20:00</div></div>
           <div class="contact-row"><div class="c-icon">✉️</div><div class="c-text"><strong>이메일</strong>vt8016@naver.com</div></div>
         </div>
@@ -265,8 +400,9 @@ footer{background:#080f1e;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
           </div>
           <select class="form-select" id="f_type">
             <option value="">매물 종류 선택 *</option>
-            <option>사무실 (30평 미만)</option><option>사무실 (30~100평)</option>
-            <option>사무실 (100평 이상)</option><option>상가</option><option>빌딩</option>
+            <option>사무실 (30평 미만)</option><option>사무실 (30~60평)</option>
+            <option>사무실 (61~100평)</option><option>사무실 (100~200평)</option>
+            <option>사무실 (200평 이상)</option><option>상가</option><option>빌딩</option>
           </select>
           <select class="form-select" id="f_deal"><option value="">거래 구분 *</option><option>임대</option><option>매매</option></select>
           <input class="form-input" placeholder="희망 소재지 (예: 판교테크노밸리 1단지)" id="f_loc">
@@ -304,8 +440,9 @@ footer{background:#080f1e;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
           </div>
           <select class="form-select" id="r_type">
             <option value="">매물 종류 선택 *</option>
-            <option>사무실 (30평 미만)</option><option>사무실 (30~100평)</option>
-            <option>사무실 (100평 이상)</option><option>상가</option><option>빌딩</option>
+            <option>사무실 (30평 미만)</option><option>사무실 (30~60평)</option>
+            <option>사무실 (61~100평)</option><option>사무실 (100~200평)</option>
+            <option>사무실 (200평 이상)</option><option>상가</option><option>빌딩</option>
           </select>
           <select class="form-select" id="r_deal"><option value="">거래 구분 *</option><option>임대</option><option>매매</option></select>
           <input class="form-input" placeholder="매물 소재지 * (예: 성남시 분당구 삼평동 000)" id="r_loc">
@@ -338,7 +475,7 @@ footer{background:#080f1e;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
           <div class="contact-row"><div class="c-icon">📞</div><div class="c-text"><strong>전화 상담</strong>031-8016-9300 / 031-8016-9300<br>평일·주말 09:00 ~ 20:00</div></div>
           <div class="contact-row"><div class="c-icon">✉️</div><div class="c-text"><strong>이메일</strong>vt8016@naver.com</div></div>
           <div class="contact-row"><div class="c-icon">📍</div><div class="c-text"><strong>사무실 위치</strong>경기 성남시 분당구 대왕판교로 670<br>유스페이스2 제108호</div></div>
-          <div class="contact-row"><div class="c-icon">📰</div><div class="c-text"><strong>블로그</strong><a href="https://blog.naver.com/vt8016" target="_blank" style="color:var(--gold)">blog.naver.com/vt8016</a></div></div>
+          <div class="contact-row"><div class="c-icon">📰</div><div class="c-text"><strong>블로그</strong><a href="https://blog.naver.com/vt9300" target="_blank" style="color:var(--gold)">blog.naver.com/vt9300</a></div></div>
         </div>
         <div class="contact-box">
           <h3>온라인 상담 신청</h3>
@@ -362,7 +499,7 @@ footer{background:#080f1e;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
     대표자: 신큰별 &nbsp;|&nbsp; 사업자등록번호: (등록 예정) &nbsp;|&nbsp; 중개사등록번호: (등록 예정)<br>
     TEL: 031-8016-9300 &nbsp;|&nbsp; FAX: 031-8016-9303 &nbsp;|&nbsp; Email: vt8016@naver.com<br>
     사업장 주소: 경기 성남시 분당구 대왕판교로 670 유스페이스2 제108호<br>
-    <a href="https://blog.naver.com/vt8016" target="_blank">블로그 바로가기</a>
+    <a href="https://blog.naver.com/vt9300" target="_blank">블로그 바로가기</a>
   </div>
 </footer>
 
@@ -385,10 +522,18 @@ footer{background:#080f1e;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
     <div class="form-row">
       <div class="form-group"><label>분류 *</label>
         <select id="fCategory">
-          <option value="office-s">사무실 - 30평 미만</option>
-          <option value="office-m">사무실 - 30~100평</option>
-          <option value="office-l">사무실 - 100평 이상</option>
-          <option value="store">상가</option>
+          <option value="office-xs">사무실 - 30평 미만</option>
+          <option value="office-s">사무실 - 30~60평</option>
+          <option value="office-m">사무실 - 61~100평</option>
+          <option value="office-l">사무실 - 100~200평</option>
+          <option value="office-xl">사무실 - 200평 이상</option>
+          <option value="store-us1">상가 - 유스페이스 1</option>
+          <option value="store-us2">상가 - 유스페이스 2</option>
+          <option value="store-hsn">상가 - H스퀘어(북)</option>
+          <option value="store-hss">상가 - H스퀘어(남)</option>
+          <option value="store-sha">상가 - 삼환하이펙스 A동</option>
+          <option value="store-shb">상가 - 삼환하이펙스 B동</option>
+          <option value="store-etc">상가 - 기타</option>
           <option value="building">빌딩</option>
         </select>
       </div>
@@ -432,12 +577,46 @@ footer{background:#080f1e;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
 </div>
 
 <script>
-const ADMIN_PW='8016'; // ← 비밀번호 여기서 변경하세요
+const ADMIN_PW='1234'; // ← 비밀번호 여기서 변경
 let isAdmin=false,currentCategory='all',editingId=null;
-let properties=[]; // 샘플 매물 없음 - 구글 시트 연동 후 자동 채워짐
+let properties=[];
 let nextId=1;
-const catLabels={'all':'전체 매물','office-s':'사무실 · 30평 미만','office-m':'사무실 · 30~100평','office-l':'사무실 · 100평 이상','store':'상가','building':'빌딩'};
 
+const catLabels={
+  'all':'전체 매물',
+  'office-xs':'사무실 · 30평 미만','office-s':'사무실 · 30~60평',
+  'office-m':'사무실 · 61~100평','office-l':'사무실 · 100~200평','office-xl':'사무실 · 200평 이상',
+  'store-us1':'상가 · 유스페이스 1','store-us2':'상가 · 유스페이스 2',
+  'store-hsn':'상가 · H스퀘어(북)','store-hss':'상가 · H스퀘어(남)',
+  'store-sha':'상가 · 삼환하이펙스 A동','store-shb':'상가 · 삼환하이펙스 B동',
+  'store-etc':'상가 · 기타','building':'빌딩'
+};
+
+const allCats=['all','office-xs','office-s','office-m','office-l','office-xl','store-us1','store-us2','store-hsn','store-hss','store-sha','store-shb','store-etc','building'];
+
+// ── 환산기 ──
+function calcFrom(from){
+  const m2=document.getElementById('calcM2');
+  const py=document.getElementById('calcPyeong');
+  const res=document.getElementById('calcResult');
+  if(from==='m2'){
+    const v=parseFloat(m2.value);
+    if(!isNaN(v)&&v>0){
+      const p=(v/3.3058).toFixed(2);
+      py.value='';
+      res.textContent=`${v} ㎡ = ${p} 평`;
+    } else { res.textContent='숫자를 입력하세요'; }
+  } else {
+    const v=parseFloat(py.value);
+    if(!isNaN(v)&&v>0){
+      const m=(v*3.3058).toFixed(2);
+      m2.value='';
+      res.textContent=`${v} 평 = ${m} ㎡`;
+    } else { res.textContent='숫자를 입력하세요'; }
+  }
+}
+
+// ── 카테고리 ──
 function goHome(){setCategory('all',document.querySelector('.sidebar-item'));}
 function setCategory(cat,el){
   currentCategory=cat;
@@ -446,13 +625,15 @@ function setCategory(cat,el){
   document.getElementById('currentCategoryLabel').textContent=catLabels[cat]||cat;
   showPage('home');renderCurrent();
 }
+
+// ── 렌더 ──
 function renderCurrent(){
   const type=document.getElementById('filterType').value;
   const kw=document.getElementById('filterKeyword').value.toLowerCase();
   let list=properties;
   if(currentCategory!=='all')list=list.filter(p=>p.category===currentCategory);
   if(type)list=list.filter(p=>p.dealType===type);
-  if(kw)list=list.filter(p=>(p.title+p.location+p.note).toLowerCase().includes(kw));
+  if(kw)list=list.filter(p=>(p.title+p.location+(p.note||'')).toLowerCase().includes(kw));
   renderGrid(list);
   document.getElementById('resultCount').textContent=list.length;
 }
@@ -468,7 +649,7 @@ function renderGrid(list){
       :`<span class="price-lbl">보증금 / 월세</span><span class="price-val">${fmtWon(p.deposit)} / <em>월 ${fmtWon(p.monthly)}</em></span>`;
     return `<div class="prop-card" id="card-${p.id}">
       <div class="card-thumb" style="background:${thumbColor(p.category)}">
-        ${p.icon}
+        ${p.icon||'🏢'}
         ${p.badge?`<div class="badge-new">${p.badge}</div>`:''}
         <div class="badge-type ${p.dealType==='임대'?'badge-rent':'badge-sale'}">${p.dealType}</div>
       </div>
@@ -479,7 +660,7 @@ function renderGrid(list){
           <div><div class="spec-label">전용면적</div><div class="spec-val">${p.areaM}㎡ (${p.areaP}평)</div></div>
           <div><div class="spec-label">층수</div><div class="spec-val">${p.floor}</div></div>
           <div><div class="spec-label">입주가능</div><div class="spec-val">${p.movein}</div></div>
-          <div><div class="spec-label">분류</div><div class="spec-val">${catLabels[p.category]}</div></div>
+          <div><div class="spec-label">분류</div><div class="spec-val">${catLabels[p.category]||p.category}</div></div>
         </div>
         <div class="card-price">${price}</div>
       </div>
@@ -491,20 +672,33 @@ function renderGrid(list){
   }).join('');
 }
 function thumbColor(cat){
-  const m={'office-s':'linear-gradient(135deg,#a3c4e855,#0f1f3d22)','office-m':'linear-gradient(135deg,#c4a3e855,#4c0f3d22)','office-l':'linear-gradient(135deg,#a3e8c455,#0f3d1a22)','store':'linear-gradient(135deg,#e8d5a355,#c9a84c22)','building':'linear-gradient(135deg,#e8a3a355,#c94c4c22)'};
-  return m[cat]||'linear-gradient(135deg,#eee,#ddd)';
+  if(cat.startsWith('office'))return'linear-gradient(135deg,#a3c4e855,#0f1f3d22)';
+  if(cat.startsWith('store'))return'linear-gradient(135deg,#e8d5a355,#c9a84c22)';
+  return'linear-gradient(135deg,#e8a3a355,#c94c4c22)';
 }
-function fmtWon(v){if(!v||v==='')return '-';return Number(v).toLocaleString()+'만';}
-function fmtPrice(v){if(!v||v==='')return '-';const n=Number(v);if(n>=10000)return(n/10000).toFixed(1)+'억';return n.toLocaleString()+'만원';}
+function fmtWon(v){if(!v||v==='')return'-';return Number(v).toLocaleString()+'만';}
+function fmtPrice(v){if(!v||v==='')return'-';const n=Number(v);if(n>=10000)return(n/10000).toFixed(1)+'억';return n.toLocaleString()+'만원';}
+
 function updateCounts(){
-  ['all','office-s','office-m','office-l','store','building'].forEach(c=>{
+  allCats.forEach(c=>{
     const cnt=c==='all'?properties.length:properties.filter(p=>p.category===c).length;
     const el=document.getElementById('cnt-'+c);if(el)el.textContent=cnt;
   });
   document.getElementById('totalCount').textContent=properties.length;
 }
-function showPage(p){['home','find','register','contact'].forEach(id=>{document.getElementById('page-'+id).style.display=p===id?'block':'none';});}
-function resetFilter(){document.getElementById('filterType').value='';document.getElementById('filterKeyword').value='';renderCurrent();}
+
+function showPage(p){
+  ['home','find','register','contact'].forEach(id=>{
+    document.getElementById('page-'+id).style.display=p===id?'block':'none';
+  });
+}
+function resetFilter(){
+  document.getElementById('filterType').value='';
+  document.getElementById('filterKeyword').value='';
+  renderCurrent();
+}
+
+// ── AUTH ──
 function openLogin(){document.getElementById('loginOverlay').classList.add('show');setTimeout(()=>document.getElementById('pwInput').focus(),100);document.getElementById('loginErr').style.display='none';}
 function closeLogin(){document.getElementById('loginOverlay').classList.remove('show');}
 function doLogin(){
@@ -522,27 +716,54 @@ function logout(){
   document.getElementById('mainArea').classList.remove('admin-mode');
   document.body.classList.remove('admin-mode-on');
 }
+
+// ── PROP MODAL ──
 function openAddModal(){editingId=null;document.getElementById('modalTitle').textContent='매물 추가';clearForm();document.getElementById('propOverlay').classList.add('show');}
 function openEditModal(id){
   const p=properties.find(x=>x.id===id);if(!p)return;
   editingId=id;document.getElementById('modalTitle').textContent='매물 수정';
-  ['fCategory','fDealType','fTitle','fLocation','fFloor','fAreaM','fAreaP','fDeposit','fMonthly','fSalePrice','fMovein','fBadge','fIcon','fNote'].forEach(k=>{
-    const field=k.replace('f','').toLowerCase();
-    const map={fcategory:'category',fdealtype:'dealType',ftitle:'title',flocation:'location',ffloor:'floor',fareasm:'areaM',fareasp:'areaP',fdeposit:'deposit',fmonthly:'monthly',fsaleprice:'salePrice',fmovein:'movein',fbadge:'badge',ficon:'icon',fnote:'note'};
-    document.getElementById(k).value=p[map[k.toLowerCase()]]||'';
-  });
+  document.getElementById('fCategory').value=p.category;
+  document.getElementById('fDealType').value=p.dealType;
+  document.getElementById('fTitle').value=p.title;
+  document.getElementById('fLocation').value=p.location;
+  document.getElementById('fFloor').value=p.floor;
+  document.getElementById('fAreaM').value=p.areaM;
+  document.getElementById('fAreaP').value=p.areaP;
+  document.getElementById('fDeposit').value=p.deposit;
+  document.getElementById('fMonthly').value=p.monthly;
+  document.getElementById('fSalePrice').value=p.salePrice;
+  document.getElementById('fMovein').value=p.movein;
+  document.getElementById('fBadge').value=p.badge;
+  document.getElementById('fIcon').value=p.icon;
+  document.getElementById('fNote').value=p.note;
   document.getElementById('propOverlay').classList.add('show');
 }
 function closePropModal(){document.getElementById('propOverlay').classList.remove('show');editingId=null;}
 function clearForm(){
   ['fTitle','fLocation','fFloor','fAreaM','fAreaP','fDeposit','fMonthly','fSalePrice','fMovein','fNote'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('fCategory').value='office-s';document.getElementById('fDealType').value='임대';
-  document.getElementById('fBadge').value='';document.getElementById('fIcon').value='🏢';
+  document.getElementById('fCategory').value='office-xs';
+  document.getElementById('fDealType').value='임대';
+  document.getElementById('fBadge').value='';
+  document.getElementById('fIcon').value='🏢';
 }
 function saveProp(){
   const title=document.getElementById('fTitle').value.trim();
   if(!title){alert('매물명을 입력해주세요.');return;}
-  const data={category:document.getElementById('fCategory').value,dealType:document.getElementById('fDealType').value,title,location:document.getElementById('fLocation').value,floor:document.getElementById('fFloor').value,areaM:Number(document.getElementById('fAreaM').value)||0,areaP:Number(document.getElementById('fAreaP').value)||0,deposit:document.getElementById('fDeposit').value,monthly:document.getElementById('fMonthly').value,salePrice:document.getElementById('fSalePrice').value,movein:document.getElementById('fMovein').value,badge:document.getElementById('fBadge').value,icon:document.getElementById('fIcon').value,note:document.getElementById('fNote').value};
+  const data={
+    category:document.getElementById('fCategory').value,
+    dealType:document.getElementById('fDealType').value,
+    title,location:document.getElementById('fLocation').value,
+    floor:document.getElementById('fFloor').value,
+    areaM:Number(document.getElementById('fAreaM').value)||0,
+    areaP:Number(document.getElementById('fAreaP').value)||0,
+    deposit:document.getElementById('fDeposit').value,
+    monthly:document.getElementById('fMonthly').value,
+    salePrice:document.getElementById('fSalePrice').value,
+    movein:document.getElementById('fMovein').value,
+    badge:document.getElementById('fBadge').value,
+    icon:document.getElementById('fIcon').value,
+    note:document.getElementById('fNote').value
+  };
   if(editingId){const idx=properties.findIndex(x=>x.id===editingId);properties[idx]={...data,id:editingId};}
   else{properties.push({...data,id:nextId++});}
   closePropModal();updateCounts();renderCurrent();
@@ -551,6 +772,8 @@ function deleteProp(id){
   if(!confirm('이 매물을 삭제하시겠습니까?'))return;
   properties=properties.filter(p=>p.id!==id);updateCounts();renderCurrent();
 }
+
+// ── FORMS ──
 function submitFind(){
   const n=document.getElementById('f_name').value,t=document.getElementById('f_tel').value;
   if(!n||!t){alert('성함과 연락처는 필수입니다.');return;}
@@ -571,6 +794,8 @@ function submitContact(){
   alert(`감사합니다, ${n}님!\n빠르게 연락드리겠습니다. 📞`);
   ['cName','cTel','cItem','cMsg'].forEach(id=>document.getElementById(id).value='');
 }
+
+// ── INIT ──
 updateCounts();
 setCategory('all',document.querySelector('.sidebar-item'));
 </script>
