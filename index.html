@@ -687,11 +687,56 @@ function updateCounts(){
   document.getElementById('totalCount').textContent=properties.length;
 }
 
-function showPage(p){
+// ── 해시 라우터 (뒤로가기 지원) ──
+function showPage(p, pushState=true){
   ['home','find','register','contact'].forEach(id=>{
     document.getElementById('page-'+id).style.display=p===id?'block':'none';
   });
+  // 사이드바 의뢰/기타 항목 활성화 표시
+  if(['find','register','contact'].includes(p)){
+    document.querySelectorAll('.sidebar-item').forEach(i=>i.classList.remove('active'));
+  }
+  if(pushState){
+    const hash = p==='home' ? '#' : '#'+p;
+    history.pushState({page:p, cat:currentCategory}, '', hash);
+  }
+  window.scrollTo(0,0);
 }
+
+function setCategory(cat, el, pushState=true){
+  currentCategory=cat;
+  document.querySelectorAll('.sidebar-item').forEach(i=>i.classList.remove('active'));
+  if(el)el.classList.add('active');
+  document.getElementById('currentCategoryLabel').textContent=catLabels[cat]||cat;
+  ['home','find','register','contact'].forEach(id=>{
+    document.getElementById('page-'+id).style.display=id==='home'?'block':'none';
+  });
+  renderCurrent();
+  if(pushState){
+    const hash = cat==='all' ? '#' : '#cat-'+cat;
+    history.pushState({page:'home', cat:cat}, '', hash);
+  }
+  window.scrollTo(0,0);
+}
+
+// 뒤로가기/앞으로가기 이벤트
+window.addEventListener('popstate', function(e){
+  const hash = location.hash;
+  if(!hash || hash==='#'){
+    setCategory('all', document.querySelector('.sidebar-item'), false);
+  } else if(hash.startsWith('#cat-')){
+    const cat = hash.replace('#cat-','');
+    const el = [...document.querySelectorAll('.sidebar-item')].find(i=>i.getAttribute('onclick')&&i.getAttribute('onclick').includes("'"+cat+"'"));
+    setCategory(cat, el, false);
+  } else if(hash==='#find'){
+    showPage('find', false);
+  } else if(hash==='#register'){
+    showPage('register', false);
+  } else if(hash==='#contact'){
+    showPage('contact', false);
+  }
+});
+
 function resetFilter(){
   document.getElementById('filterType').value='';
   document.getElementById('filterKeyword').value='';
@@ -797,7 +842,21 @@ function submitContact(){
 
 // ── INIT ──
 updateCounts();
-setCategory('all',document.querySelector('.sidebar-item'));
+// 페이지 로드 시 해시 확인해서 해당 페이지 표시
+(function(){
+  const hash = location.hash;
+  if(hash==='#find') showPage('find', false);
+  else if(hash==='#register') showPage('register', false);
+  else if(hash==='#contact') showPage('contact', false);
+  else if(hash.startsWith('#cat-')){
+    const cat=hash.replace('#cat-','');
+    const el=[...document.querySelectorAll('.sidebar-item')].find(i=>i.getAttribute('onclick')&&i.getAttribute('onclick').includes("'"+cat+"'"));
+    setCategory(cat, el||document.querySelector('.sidebar-item'), false);
+  } else {
+    setCategory('all', document.querySelector('.sidebar-item'), false);
+    history.replaceState({page:'home',cat:'all'}, '', '#');
+  }
+})();
 </script>
 </body>
 </html>
