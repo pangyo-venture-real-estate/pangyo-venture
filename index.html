@@ -496,7 +496,7 @@ footer{background:#080f1e;padding:2.5rem 2rem;border-top:1px solid rgba(201,168,
   <div class="footer-divider"></div>
   <div class="footer-info">
     판교테크노밸리 상가·사무실 매매·임대 전문<br>
-    대표자: 신큰별 &nbsp;|&nbsp; 사업자등록번호: 601-03-66937 &nbsp;|&nbsp; 중개사등록번호: (등록 예정)<br>
+    대표자: 신큰별 &nbsp;|&nbsp; 사업자등록번호: (등록 예정) &nbsp;|&nbsp; 중개사등록번호: (등록 예정)<br>
     TEL: 031-8016-9300 &nbsp;|&nbsp; FAX: 031-8016-9303 &nbsp;|&nbsp; Email: vt8016@naver.com<br>
     사업장 주소: 경기 성남시 분당구 대왕판교로 670 유스페이스2 제108호<br>
     <a href="https://blog.naver.com/vt9300" target="_blank">블로그 바로가기</a>
@@ -647,9 +647,13 @@ function renderGrid(list){
     const price=p.dealType==='매매'
       ?`<span class="price-lbl">매매가</span><span class="price-val"><em>${fmtPrice(p.salePrice)}</em></span>`
       :`<span class="price-lbl">보증금 / 월세</span><span class="price-val">${fmtWon(p.deposit)} / <em>월 ${fmtWon(p.monthly)}</em></span>`;
+    // 이미지: 구글드라이브 URL 또는 이모지
+    const thumbContent = p.image
+      ? `<img src="${p.image}" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;" onerror="this.style.display='none'">`
+      : `<span style="font-size:3rem">${p.icon||'🏢'}</span>`;
     return `<div class="prop-card" id="card-${p.id}">
-      <div class="card-thumb" style="background:${thumbColor(p.category)}">
-        ${p.icon||'🏢'}
+      <div class="card-thumb" style="background:${thumbColor(p.category)};position:relative;">
+        ${thumbContent}
         ${p.badge?`<div class="badge-new">${p.badge}</div>`:''}
         <div class="badge-type ${p.dealType==='임대'?'badge-rent':'badge-sale'}">${p.dealType}</div>
       </div>
@@ -840,8 +844,52 @@ function submitContact(){
   ['cName','cTel','cItem','cMsg'].forEach(id=>document.getElementById(id).value='');
 }
 
+// ── 구글 시트 CSV 연동 ──
+const SHEET_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSw7rPOGUOl_3W5u0RudzHJdABviLJRC9T8ax5QW-p8SX7h6ttPW64vYHRYe60SRpqWWQEERj-shIgi/pub?output=csv';
+
+function parseCSV(text){
+  const lines = text.trim().split('\n');
+  if(lines.length < 2) return [];
+  const headers = lines[0].split(',').map(h=>h.trim().replace(/^"|"$/g,''));
+  return lines.slice(1).map((line,i)=>{
+    // 쉼표 포함 셀(따옴표로 감싸진) 처리
+    const cols = [];
+    let cur='', inQ=false;
+    for(let c of line){
+      if(c==='"') inQ=!inQ;
+      else if(c===',' && !inQ){ cols.push(cur.trim()); cur=''; }
+      else cur+=c;
+    }
+    cols.push(cur.trim());
+    const obj={id: i+1};
+    headers.forEach((h,idx)=>{ obj[h]=cols[idx]||''; });
+    return obj;
+  }).filter(p=>p.category&&p.title); // 빈 행 제거
+}
+
+function loadSheet(){
+  const grid = document.getElementById('propertyGrid');
+  grid.innerHTML = `<div class="empty-state"><div class="big">⏳</div><p>매물을 불러오는 중입니다...</p></div>`;
+
+  fetch(SHEET_CSV)
+    .then(r=>r.text())
+    .then(text=>{
+      properties = parseCSV(text);
+      nextId = properties.length + 1;
+      updateCounts();
+      renderCurrent();
+    })
+    .catch(()=>{
+      properties = [];
+      updateCounts();
+      renderCurrent();
+    });
+}
+
 // ── INIT ──
 updateCounts();
+loadSheet();
+
 // 페이지 로드 시 해시 확인해서 해당 페이지 표시
 (function(){
   const hash = location.hash;
