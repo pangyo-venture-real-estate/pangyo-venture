@@ -640,11 +640,15 @@ footer{background:#080f1e;padding:2rem 1.5rem;border-top:2px solid rgba(201,168,
           </div>
           <div class="contact-box">
             <h3>온라인 상담 신청</h3>
-            <input class="form-input" placeholder="성함" id="cName">
-            <input class="form-input" placeholder="연락처 (010-0000-0000)" id="cTel">
-            <input class="form-input" placeholder="관심 매물 또는 지역" id="cItem">
-            <textarea class="form-textarea" placeholder="문의 내용을 입력해 주세요." id="cMsg"></textarea>
-            <button class="sub-btn" onclick="submitContact()">상담 신청하기</button>
+            <p style="font-size:.82rem;color:var(--gray);line-height:1.8;margin-bottom:1.2rem;">
+              아래 버튼을 누르면 온라인 상담 양식으로 이동합니다.<br>
+              작성하시면 담당자가 <strong style="color:var(--navy)">당일 내 연락</strong>드립니다.
+            </p>
+            <div class="cinfo"><div class="cinfo-ic">📞</div><div class="cinfo-txt"><strong>전화 상담</strong>031-8016-9300<br>평일·주말 09:00 ~ 20:00</div></div>
+            <div class="cinfo"><div class="cinfo-ic">✉️</div><div class="cinfo-txt"><strong>이메일</strong>vt8016@naver.com</div></div>
+            <button class="sub-btn" style="margin-top:1.2rem;" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdOb1gNVko47aT-2AnafBzRxGXAUp6Kt_k8fI3Ug1HeQiZTCA/viewform?usp=publish-editor','_blank')">
+              📋 온라인 상담 신청하기 →
+            </button>
           </div>
         </div>
       </div>
