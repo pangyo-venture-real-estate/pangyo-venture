@@ -437,6 +437,88 @@ footer{background:#080f1e;padding:2.5rem 4rem;border-top:1px solid rgba(201,168,
     </div>
   </div>
 
+
+  <!-- ══ 건물 쇼케이스 ══ -->
+  <div class="bld-sec" id="bld-section">
+    <span class="sec-tag">BUILDINGS</span>
+    <h2 class="sec-title">판교테크노밸리<br><em>주요 건물 안내</em></h2>
+    <p class="sec-desc">관심 건물을 클릭하시면 상세 정보와 상담 신청을 하실 수 있습니다.</p>
+    <div class="bld-grid-6">
+      <div class="bld-card" onclick="openBuilding(0)">
+        <div class="bld-thumb c1">🏢</div>
+        <div class="bld-info">
+          <div class="bld-name">유스페이스 1</div>
+          <div class="bld-tags">#판교사무실 #판교테크노밸리사무실 #유스페이스1</div>
+        </div>
+      </div>
+      <div class="bld-card" onclick="openBuilding(1)">
+        <div class="bld-thumb c2">🏢</div>
+        <div class="bld-info">
+          <div class="bld-name">유스페이스 2</div>
+          <div class="bld-tags">#판교사무실 #판교테크노밸리사무실 #유스페이스2</div>
+        </div>
+      </div>
+      <div class="bld-card" onclick="openBuilding(2)">
+        <div class="bld-thumb c3">🏗️</div>
+        <div class="bld-info">
+          <div class="bld-name">H스퀘어 N동</div>
+          <div class="bld-tags">#판교사무실 #판교테크노밸리사무실 #H스퀘어</div>
+        </div>
+      </div>
+      <div class="bld-card" onclick="openBuilding(3)">
+        <div class="bld-thumb c4">🏗️</div>
+        <div class="bld-info">
+          <div class="bld-name">H스퀘어 S동</div>
+          <div class="bld-tags">#판교사무실 #판교테크노밸리사무실 #H스퀘어</div>
+        </div>
+      </div>
+      <div class="bld-card" onclick="openBuilding(4)">
+        <div class="bld-thumb c5">🏛️</div>
+        <div class="bld-info">
+          <div class="bld-name">삼환하이펙스 A동</div>
+          <div class="bld-tags">#판교사무실 #판교테크노밸리사무실 #삼환하이펙스</div>
+        </div>
+      </div>
+      <div class="bld-card" onclick="openBuilding(5)">
+        <div class="bld-thumb c6">🏛️</div>
+        <div class="bld-info">
+          <div class="bld-name">삼환하이펙스 B동</div>
+          <div class="bld-tags">#판교사무실 #판교테크노밸리사무실 #삼환하이펙스</div>
+        </div>
+      </div>
+    </div>
+    <div class="bld-grid-4">
+      <div class="bld-card" onclick="openBuilding(6)">
+        <div class="bld-thumb c7">🏙️</div>
+        <div class="bld-info">
+          <div class="bld-name">우림 W City</div>
+          <div class="bld-tags">#판교사무실 #판교테크노밸리사무실 #우림W시티</div>
+        </div>
+      </div>
+      <div class="bld-card" onclick="openBuilding(7)">
+        <div class="bld-thumb c8">💻</div>
+        <div class="bld-info">
+          <div class="bld-name">판교디지털미디어센터</div>
+          <div class="bld-tags">#판교사무실 #판교테크노밸리사무실 #판교디지털센터</div>
+        </div>
+      </div>
+      <div class="bld-card" onclick="openBuilding(8)">
+        <div class="bld-thumb c9">🔬</div>
+        <div class="bld-info">
+          <div class="bld-name">이노벨리</div>
+          <div class="bld-tags">#판교사무실 #판교테크노밸리사무실 #이노벨리</div>
+        </div>
+      </div>
+      <div class="bld-card" onclick="openBuilding(9)">
+        <div class="bld-thumb c10">🚀</div>
+        <div class="bld-info">
+          <div class="bld-name">세븐벤처밸리</div>
+          <div class="bld-tags">#판교사무실 #판교테크노밸리사무실 #세븐벤처밸리</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- 프로세스 -->
   <div class="sec process">
     <span class="sec-tag">HOW IT WORKS</span>
@@ -529,6 +611,566 @@ footer{background:#080f1e;padding:2.5rem 4rem;border-top:1px solid rgba(201,168,
     </div>
   </div>
 </div>
+
+    <div class="bld-detail-page page" id="bld-detail-us1">
+      <div class="bld-detail-header">
+        <button class="bld-back-btn" onclick="closeDetail()">← 건물 목록으로</button>
+        <div class="bld-breadcrumb">
+          <span onclick="goHome()" style="cursor:pointer">홈</span><span class="bc-sep">›</span>
+          <span onclick="closeDetail()" style="cursor:pointer">주요 건물 안내</span><span class="bc-sep">›</span>
+          <span class="bc-cur">유스페이스 1</span>
+        </div>
+      </div>
+      <div class="bld-detail-layout">
+        <div class="bld-detail-left">
+          <div class="bld-detail-main-img c1">🏢</div>
+          <div class="bld-detail-thumbs">
+            <div class="bld-thumb-sm c1 active">🏢</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+          </div>
+        </div>
+        <div class="bld-detail-right">
+          <div class="bld-detail-zone">판교테크노밸리 1단지</div>
+          <div class="bld-detail-name">유스페이스 1</div>
+          <div class="bld-detail-tag-row"><span class="bld-detail-tag">#판교사무실</span><span class="bld-detail-tag">#판교테크노밸리사무실</span><span class="bld-detail-tag">#유스페이스1</span></div>
+          <div class="info-table">
+            <div class="info-row"><span class="info-label">소재지</span><span class="info-value">경기 성남시 분당구 대왕판교로 660 (삼평동 670)</span></div>
+            <div class="info-row"><span class="info-label">건물 용도</span><span class="info-value">근린생활시설 · 업무시설</span></div>
+            <div class="info-row"><span class="info-label">건물 규모</span><span class="info-value">지하 5층 / 지상 12층</span></div>
+            <div class="info-row"><span class="info-label">임대 유형</span><span class="info-value">상가 임대 · 사무실 임대 · 매매</span></div>
+            <div class="info-row"><span class="info-label">입주 가능일</span><span class="info-value">즉시 가능 (매물별 상이)</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-detail-desc-title">건물 소개</div>
+          <p class="bld-detail-desc">판교테크노밸리 1단지 핵심 상업시설로, 1층 상가부터 고층 사무실까지 다양한 규모의 매물이 있습니다. 신분당선 판교역과 인접해 유동인구가 풍부하며 임차 수요가 높은 건물입니다.</p>
+          <div class="bld-hashtag-section">
+            <div class="bld-hashtag-title">관련 키워드</div>
+            <div class="bld-hashtags"><span class="bld-panel-tag">#판교사무실</span><span class="bld-panel-tag">#판교테크노밸리사무실</span><span class="bld-panel-tag">#유스페이스1</span><span class="bld-panel-tag">#판교상가임대</span><span class="bld-panel-tag">#판교사무실임대</span><span class="bld-panel-tag">#판교역인근</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-consult-card">
+            <div class="bld-consult-title">이 건물에 관심 있으신가요?</div>
+            <p class="bld-consult-desc">조건을 알려주시면 당일 내 연락드리겠습니다.</p>
+            <div class="bld-consult-phones">
+              <div><span class="bld-phone-label">대표</span><span class="bld-phone-num">031-8016-9300</span></div>
+              <div><span class="bld-phone-label">직통</span><span class="bld-phone-num">010-3846-4555</span></div>
+            </div>
+            <div class="bld-consult-btns">
+              <button class="bld-btn-primary" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdb25AcUvY33NA39emnyORYnmshxmbcqDOaCl7tFaqxRL5u-w/viewform','_blank')">🔍 구하기 의뢰 접수하기</button>
+              <button class="bld-btn-outline" onclick="location.href='tel:031-8016-9300'">📞 전화 상담</button>
+            </div>
+          </div>
+          <div class="bld-similar-title">다른 건물 보기</div>
+          <div class="bld-similar-grid" id="similar-us1"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bld-detail-page page" id="bld-detail-us2">
+      <div class="bld-detail-header">
+        <button class="bld-back-btn" onclick="closeDetail()">← 건물 목록으로</button>
+        <div class="bld-breadcrumb">
+          <span onclick="goHome()" style="cursor:pointer">홈</span><span class="bc-sep">›</span>
+          <span onclick="closeDetail()" style="cursor:pointer">주요 건물 안내</span><span class="bc-sep">›</span>
+          <span class="bc-cur">유스페이스 2</span>
+        </div>
+      </div>
+      <div class="bld-detail-layout">
+        <div class="bld-detail-left">
+          <div class="bld-detail-main-img c2">🏢</div>
+          <div class="bld-detail-thumbs">
+            <div class="bld-thumb-sm c2 active">🏢</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+          </div>
+        </div>
+        <div class="bld-detail-right">
+          <div class="bld-detail-zone">판교테크노밸리 1단지</div>
+          <div class="bld-detail-name">유스페이스 2</div>
+          <div class="bld-detail-tag-row"><span class="bld-detail-tag">#판교사무실</span><span class="bld-detail-tag">#판교테크노밸리사무실</span><span class="bld-detail-tag">#유스페이스2</span></div>
+          <div class="info-table">
+            <div class="info-row"><span class="info-label">소재지</span><span class="info-value">경기 성남시 분당구 대왕판교로 670 (삼평동 682)</span></div>
+            <div class="info-row"><span class="info-label">건물 용도</span><span class="info-value">근린생활시설 · 업무시설</span></div>
+            <div class="info-row"><span class="info-label">건물 규모</span><span class="info-value">지하 5층 / 지상 10층</span></div>
+            <div class="info-row"><span class="info-label">임대 유형</span><span class="info-value">상가 임대 · 사무실 임대 · 매매</span></div>
+            <div class="info-row"><span class="info-label">입주 가능일</span><span class="info-value">즉시 가능 (매물별 상이)</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-detail-desc-title">건물 소개</div>
+          <p class="bld-detail-desc">유스페이스1과 인접한 복합 상업시설로, IT·스타트업 기업의 밀집도가 높습니다. 소형~중형 사무실 수요가 활발하며 다양한 편의시설이 갖춰져 있습니다.</p>
+          <div class="bld-hashtag-section">
+            <div class="bld-hashtag-title">관련 키워드</div>
+            <div class="bld-hashtags"><span class="bld-panel-tag">#판교사무실</span><span class="bld-panel-tag">#판교테크노밸리사무실</span><span class="bld-panel-tag">#유스페이스2</span><span class="bld-panel-tag">#판교상가임대</span><span class="bld-panel-tag">#스타트업사무실</span><span class="bld-panel-tag">#IT기업임대</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-consult-card">
+            <div class="bld-consult-title">이 건물에 관심 있으신가요?</div>
+            <p class="bld-consult-desc">조건을 알려주시면 당일 내 연락드리겠습니다.</p>
+            <div class="bld-consult-phones">
+              <div><span class="bld-phone-label">대표</span><span class="bld-phone-num">031-8016-9300</span></div>
+              <div><span class="bld-phone-label">직통</span><span class="bld-phone-num">010-3846-4555</span></div>
+            </div>
+            <div class="bld-consult-btns">
+              <button class="bld-btn-primary" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdb25AcUvY33NA39emnyORYnmshxmbcqDOaCl7tFaqxRL5u-w/viewform','_blank')">🔍 구하기 의뢰 접수하기</button>
+              <button class="bld-btn-outline" onclick="location.href='tel:031-8016-9300'">📞 전화 상담</button>
+            </div>
+          </div>
+          <div class="bld-similar-title">다른 건물 보기</div>
+          <div class="bld-similar-grid" id="similar-us2"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bld-detail-page page" id="bld-detail-hsn">
+      <div class="bld-detail-header">
+        <button class="bld-back-btn" onclick="closeDetail()">← 건물 목록으로</button>
+        <div class="bld-breadcrumb">
+          <span onclick="goHome()" style="cursor:pointer">홈</span><span class="bc-sep">›</span>
+          <span onclick="closeDetail()" style="cursor:pointer">주요 건물 안내</span><span class="bc-sep">›</span>
+          <span class="bc-cur">H스퀘어 N동</span>
+        </div>
+      </div>
+      <div class="bld-detail-layout">
+        <div class="bld-detail-left">
+          <div class="bld-detail-main-img c3">🏗️</div>
+          <div class="bld-detail-thumbs">
+            <div class="bld-thumb-sm c3 active">🏗️</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+          </div>
+        </div>
+        <div class="bld-detail-right">
+          <div class="bld-detail-zone">판교테크노밸리 1단지</div>
+          <div class="bld-detail-name">H스퀘어 N동</div>
+          <div class="bld-detail-tag-row"><span class="bld-detail-tag">#판교사무실</span><span class="bld-detail-tag">#판교테크노밸리사무실</span><span class="bld-detail-tag">#H스퀘어</span></div>
+          <div class="info-table">
+            <div class="info-row"><span class="info-label">소재지</span><span class="info-value">경기 성남시 분당구 판교역로 235 (삼평동)</span></div>
+            <div class="info-row"><span class="info-label">건물 용도</span><span class="info-value">업무시설</span></div>
+            <div class="info-row"><span class="info-label">건물 규모</span><span class="info-value">지하 4층 / 지상 10층</span></div>
+            <div class="info-row"><span class="info-label">임대 유형</span><span class="info-value">사무실 임대 · 매매</span></div>
+            <div class="info-row"><span class="info-label">입주 가능일</span><span class="info-value">즉시 가능 (매물별 상이)</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-detail-desc-title">건물 소개</div>
+          <p class="bld-detail-desc">판교테크노밸리 중심부에 위치한 H스퀘어 북동으로, 대형 IT기업 및 스타트업이 밀집해 있습니다. 넓은 면적의 사무실 매물이 주를 이루며 접근성이 우수합니다.</p>
+          <div class="bld-hashtag-section">
+            <div class="bld-hashtag-title">관련 키워드</div>
+            <div class="bld-hashtags"><span class="bld-panel-tag">#판교사무실</span><span class="bld-panel-tag">#판교테크노밸리사무실</span><span class="bld-panel-tag">#H스퀘어</span><span class="bld-panel-tag">#판교대형사무실</span><span class="bld-panel-tag">#IT기업임대</span><span class="bld-panel-tag">#판교역도보</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-consult-card">
+            <div class="bld-consult-title">이 건물에 관심 있으신가요?</div>
+            <p class="bld-consult-desc">조건을 알려주시면 당일 내 연락드리겠습니다.</p>
+            <div class="bld-consult-phones">
+              <div><span class="bld-phone-label">대표</span><span class="bld-phone-num">031-8016-9300</span></div>
+              <div><span class="bld-phone-label">직통</span><span class="bld-phone-num">010-3846-4555</span></div>
+            </div>
+            <div class="bld-consult-btns">
+              <button class="bld-btn-primary" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdb25AcUvY33NA39emnyORYnmshxmbcqDOaCl7tFaqxRL5u-w/viewform','_blank')">🔍 구하기 의뢰 접수하기</button>
+              <button class="bld-btn-outline" onclick="location.href='tel:031-8016-9300'">📞 전화 상담</button>
+            </div>
+          </div>
+          <div class="bld-similar-title">다른 건물 보기</div>
+          <div class="bld-similar-grid" id="similar-hsn"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bld-detail-page page" id="bld-detail-hss">
+      <div class="bld-detail-header">
+        <button class="bld-back-btn" onclick="closeDetail()">← 건물 목록으로</button>
+        <div class="bld-breadcrumb">
+          <span onclick="goHome()" style="cursor:pointer">홈</span><span class="bc-sep">›</span>
+          <span onclick="closeDetail()" style="cursor:pointer">주요 건물 안내</span><span class="bc-sep">›</span>
+          <span class="bc-cur">H스퀘어 S동</span>
+        </div>
+      </div>
+      <div class="bld-detail-layout">
+        <div class="bld-detail-left">
+          <div class="bld-detail-main-img c4">🏗️</div>
+          <div class="bld-detail-thumbs">
+            <div class="bld-thumb-sm c4 active">🏗️</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+          </div>
+        </div>
+        <div class="bld-detail-right">
+          <div class="bld-detail-zone">판교테크노밸리 1단지</div>
+          <div class="bld-detail-name">H스퀘어 S동</div>
+          <div class="bld-detail-tag-row"><span class="bld-detail-tag">#판교사무실</span><span class="bld-detail-tag">#판교테크노밸리사무실</span><span class="bld-detail-tag">#H스퀘어</span></div>
+          <div class="info-table">
+            <div class="info-row"><span class="info-label">소재지</span><span class="info-value">경기 성남시 분당구 삼평동 680</span></div>
+            <div class="info-row"><span class="info-label">건물 용도</span><span class="info-value">업무시설</span></div>
+            <div class="info-row"><span class="info-label">건물 규모</span><span class="info-value">지하 4층 / 지상 10층</span></div>
+            <div class="info-row"><span class="info-label">임대 유형</span><span class="info-value">사무실 임대 · 매매</span></div>
+            <div class="info-row"><span class="info-label">입주 가능일</span><span class="info-value">즉시 가능 (매물별 상이)</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-detail-desc-title">건물 소개</div>
+          <p class="bld-detail-desc">H스퀘어 남동으로 N동과 함께 테크노밸리 대표 오피스 빌딩입니다. 중대형 사무실 위주이며 주요 IT기업 본사 및 연구소가 입주해 있습니다.</p>
+          <div class="bld-hashtag-section">
+            <div class="bld-hashtag-title">관련 키워드</div>
+            <div class="bld-hashtags"><span class="bld-panel-tag">#판교사무실</span><span class="bld-panel-tag">#판교테크노밸리사무실</span><span class="bld-panel-tag">#H스퀘어</span><span class="bld-panel-tag">#판교중대형사무실</span><span class="bld-panel-tag">#IT본사입주</span><span class="bld-panel-tag">#판교오피스</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-consult-card">
+            <div class="bld-consult-title">이 건물에 관심 있으신가요?</div>
+            <p class="bld-consult-desc">조건을 알려주시면 당일 내 연락드리겠습니다.</p>
+            <div class="bld-consult-phones">
+              <div><span class="bld-phone-label">대표</span><span class="bld-phone-num">031-8016-9300</span></div>
+              <div><span class="bld-phone-label">직통</span><span class="bld-phone-num">010-3846-4555</span></div>
+            </div>
+            <div class="bld-consult-btns">
+              <button class="bld-btn-primary" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdb25AcUvY33NA39emnyORYnmshxmbcqDOaCl7tFaqxRL5u-w/viewform','_blank')">🔍 구하기 의뢰 접수하기</button>
+              <button class="bld-btn-outline" onclick="location.href='tel:031-8016-9300'">📞 전화 상담</button>
+            </div>
+          </div>
+          <div class="bld-similar-title">다른 건물 보기</div>
+          <div class="bld-similar-grid" id="similar-hss"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bld-detail-page page" id="bld-detail-sha">
+      <div class="bld-detail-header">
+        <button class="bld-back-btn" onclick="closeDetail()">← 건물 목록으로</button>
+        <div class="bld-breadcrumb">
+          <span onclick="goHome()" style="cursor:pointer">홈</span><span class="bc-sep">›</span>
+          <span onclick="closeDetail()" style="cursor:pointer">주요 건물 안내</span><span class="bc-sep">›</span>
+          <span class="bc-cur">삼환하이펙스 A동</span>
+        </div>
+      </div>
+      <div class="bld-detail-layout">
+        <div class="bld-detail-left">
+          <div class="bld-detail-main-img c5">🏛️</div>
+          <div class="bld-detail-thumbs">
+            <div class="bld-thumb-sm c5 active">🏛️</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+          </div>
+        </div>
+        <div class="bld-detail-right">
+          <div class="bld-detail-zone">판교테크노밸리 1단지</div>
+          <div class="bld-detail-name">삼환하이펙스 A동</div>
+          <div class="bld-detail-tag-row"><span class="bld-detail-tag">#판교사무실</span><span class="bld-detail-tag">#판교테크노밸리사무실</span><span class="bld-detail-tag">#삼환하이펙스</span></div>
+          <div class="info-table">
+            <div class="info-row"><span class="info-label">소재지</span><span class="info-value">경기 성남시 분당구 판교역로 240 (삼평동 678)</span></div>
+            <div class="info-row"><span class="info-label">건물 용도</span><span class="info-value">근린생활시설 · 업무시설</span></div>
+            <div class="info-row"><span class="info-label">건물 규모</span><span class="info-value">지하 5층 / 지상 10층</span></div>
+            <div class="info-row"><span class="info-label">임대 유형</span><span class="info-value">상가 임대 · 사무실 임대 · 매매</span></div>
+            <div class="info-row"><span class="info-label">입주 가능일</span><span class="info-value">즉시 가능 (매물별 상이)</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-detail-desc-title">건물 소개</div>
+          <p class="bld-detail-desc">삼환하이펙스 A동은 테크노밸리 1단지의 대표 오피스 빌딩입니다. 소형부터 중형까지 다양한 면적의 사무실 매물을 보유하고 있으며, 합리적인 임대 조건으로 중소기업 입주 선호도가 높습니다.</p>
+          <div class="bld-hashtag-section">
+            <div class="bld-hashtag-title">관련 키워드</div>
+            <div class="bld-hashtags"><span class="bld-panel-tag">#판교사무실</span><span class="bld-panel-tag">#판교테크노밸리사무실</span><span class="bld-panel-tag">#삼환하이펙스</span><span class="bld-panel-tag">#판교소형사무실</span><span class="bld-panel-tag">#판교중소기업</span><span class="bld-panel-tag">#판교사무실매매</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-consult-card">
+            <div class="bld-consult-title">이 건물에 관심 있으신가요?</div>
+            <p class="bld-consult-desc">조건을 알려주시면 당일 내 연락드리겠습니다.</p>
+            <div class="bld-consult-phones">
+              <div><span class="bld-phone-label">대표</span><span class="bld-phone-num">031-8016-9300</span></div>
+              <div><span class="bld-phone-label">직통</span><span class="bld-phone-num">010-3846-4555</span></div>
+            </div>
+            <div class="bld-consult-btns">
+              <button class="bld-btn-primary" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdb25AcUvY33NA39emnyORYnmshxmbcqDOaCl7tFaqxRL5u-w/viewform','_blank')">🔍 구하기 의뢰 접수하기</button>
+              <button class="bld-btn-outline" onclick="location.href='tel:031-8016-9300'">📞 전화 상담</button>
+            </div>
+          </div>
+          <div class="bld-similar-title">다른 건물 보기</div>
+          <div class="bld-similar-grid" id="similar-sha"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bld-detail-page page" id="bld-detail-shb">
+      <div class="bld-detail-header">
+        <button class="bld-back-btn" onclick="closeDetail()">← 건물 목록으로</button>
+        <div class="bld-breadcrumb">
+          <span onclick="goHome()" style="cursor:pointer">홈</span><span class="bc-sep">›</span>
+          <span onclick="closeDetail()" style="cursor:pointer">주요 건물 안내</span><span class="bc-sep">›</span>
+          <span class="bc-cur">삼환하이펙스 B동</span>
+        </div>
+      </div>
+      <div class="bld-detail-layout">
+        <div class="bld-detail-left">
+          <div class="bld-detail-main-img c6">🏛️</div>
+          <div class="bld-detail-thumbs">
+            <div class="bld-thumb-sm c6 active">🏛️</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+          </div>
+        </div>
+        <div class="bld-detail-right">
+          <div class="bld-detail-zone">판교테크노밸리 1단지</div>
+          <div class="bld-detail-name">삼환하이펙스 B동</div>
+          <div class="bld-detail-tag-row"><span class="bld-detail-tag">#판교사무실</span><span class="bld-detail-tag">#판교테크노밸리사무실</span><span class="bld-detail-tag">#삼환하이펙스</span></div>
+          <div class="info-table">
+            <div class="info-row"><span class="info-label">소재지</span><span class="info-value">경기 성남시 분당구 판교역로 230 (삼평동 679)</span></div>
+            <div class="info-row"><span class="info-label">건물 용도</span><span class="info-value">근린생활시설 · 업무시설</span></div>
+            <div class="info-row"><span class="info-label">건물 규모</span><span class="info-value">지하 5층 / 지상 10층</span></div>
+            <div class="info-row"><span class="info-label">임대 유형</span><span class="info-value">상가 임대 · 사무실 임대 · 매매</span></div>
+            <div class="info-row"><span class="info-label">입주 가능일</span><span class="info-value">즉시 가능 (매물별 상이)</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-detail-desc-title">건물 소개</div>
+          <p class="bld-detail-desc">삼환하이펙스 B동은 A동과 인접한 오피스 빌딩으로, 소형~중형 사무실 매물이 다양하게 갖춰져 있습니다. 합리적인 임대 조건으로 스타트업과 중소기업에 적합합니다.</p>
+          <div class="bld-hashtag-section">
+            <div class="bld-hashtag-title">관련 키워드</div>
+            <div class="bld-hashtags"><span class="bld-panel-tag">#판교사무실</span><span class="bld-panel-tag">#판교테크노밸리사무실</span><span class="bld-panel-tag">#삼환하이펙스</span><span class="bld-panel-tag">#판교스타트업</span><span class="bld-panel-tag">#판교소형사무실임대</span><span class="bld-panel-tag">#합리적임대</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-consult-card">
+            <div class="bld-consult-title">이 건물에 관심 있으신가요?</div>
+            <p class="bld-consult-desc">조건을 알려주시면 당일 내 연락드리겠습니다.</p>
+            <div class="bld-consult-phones">
+              <div><span class="bld-phone-label">대표</span><span class="bld-phone-num">031-8016-9300</span></div>
+              <div><span class="bld-phone-label">직통</span><span class="bld-phone-num">010-3846-4555</span></div>
+            </div>
+            <div class="bld-consult-btns">
+              <button class="bld-btn-primary" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdb25AcUvY33NA39emnyORYnmshxmbcqDOaCl7tFaqxRL5u-w/viewform','_blank')">🔍 구하기 의뢰 접수하기</button>
+              <button class="bld-btn-outline" onclick="location.href='tel:031-8016-9300'">📞 전화 상담</button>
+            </div>
+          </div>
+          <div class="bld-similar-title">다른 건물 보기</div>
+          <div class="bld-similar-grid" id="similar-shb"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bld-detail-page page" id="bld-detail-wcity">
+      <div class="bld-detail-header">
+        <button class="bld-back-btn" onclick="closeDetail()">← 건물 목록으로</button>
+        <div class="bld-breadcrumb">
+          <span onclick="goHome()" style="cursor:pointer">홈</span><span class="bc-sep">›</span>
+          <span onclick="closeDetail()" style="cursor:pointer">주요 건물 안내</span><span class="bc-sep">›</span>
+          <span class="bc-cur">우림 W City</span>
+        </div>
+      </div>
+      <div class="bld-detail-layout">
+        <div class="bld-detail-left">
+          <div class="bld-detail-main-img c7">🏙️</div>
+          <div class="bld-detail-thumbs">
+            <div class="bld-thumb-sm c7 active">🏙️</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+          </div>
+        </div>
+        <div class="bld-detail-right">
+          <div class="bld-detail-zone">판교테크노밸리 1단지</div>
+          <div class="bld-detail-name">우림 W City</div>
+          <div class="bld-detail-tag-row"><span class="bld-detail-tag">#판교사무실</span><span class="bld-detail-tag">#판교테크노밸리사무실</span><span class="bld-detail-tag">#우림W시티</span></div>
+          <div class="info-table">
+            <div class="info-row"><span class="info-label">소재지</span><span class="info-value">경기 성남시 분당구 판교로255번길 9-22 (삼평동)</span></div>
+            <div class="info-row"><span class="info-label">건물 용도</span><span class="info-value">근린생활시설 · 업무시설</span></div>
+            <div class="info-row"><span class="info-label">건물 규모</span><span class="info-value">지하 3층 / 지상 10층</span></div>
+            <div class="info-row"><span class="info-label">임대 유형</span><span class="info-value">사무실 임대 · 매매</span></div>
+            <div class="info-row"><span class="info-label">입주 가능일</span><span class="info-value">즉시 가능 (매물별 상이)</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-detail-desc-title">건물 소개</div>
+          <p class="bld-detail-desc">판교테크노밸리 A블록 특별계획구역에 위치한 복합 업무시설입니다. 테크노밸리 중앙 핵심지역에 자리해 접근성이 뛰어나며, 쾌적한 업무 환경으로 주목받고 있습니다.</p>
+          <div class="bld-hashtag-section">
+            <div class="bld-hashtag-title">관련 키워드</div>
+            <div class="bld-hashtags"><span class="bld-panel-tag">#판교사무실</span><span class="bld-panel-tag">#판교테크노밸리사무실</span><span class="bld-panel-tag">#우림W시티</span><span class="bld-panel-tag">#판교복합업무</span><span class="bld-panel-tag">#판교오피스임대</span><span class="bld-panel-tag">#판교역세권</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-consult-card">
+            <div class="bld-consult-title">이 건물에 관심 있으신가요?</div>
+            <p class="bld-consult-desc">조건을 알려주시면 당일 내 연락드리겠습니다.</p>
+            <div class="bld-consult-phones">
+              <div><span class="bld-phone-label">대표</span><span class="bld-phone-num">031-8016-9300</span></div>
+              <div><span class="bld-phone-label">직통</span><span class="bld-phone-num">010-3846-4555</span></div>
+            </div>
+            <div class="bld-consult-btns">
+              <button class="bld-btn-primary" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdb25AcUvY33NA39emnyORYnmshxmbcqDOaCl7tFaqxRL5u-w/viewform','_blank')">🔍 구하기 의뢰 접수하기</button>
+              <button class="bld-btn-outline" onclick="location.href='tel:031-8016-9300'">📞 전화 상담</button>
+            </div>
+          </div>
+          <div class="bld-similar-title">다른 건물 보기</div>
+          <div class="bld-similar-grid" id="similar-wcity"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bld-detail-page page" id="bld-detail-pdc">
+      <div class="bld-detail-header">
+        <button class="bld-back-btn" onclick="closeDetail()">← 건물 목록으로</button>
+        <div class="bld-breadcrumb">
+          <span onclick="goHome()" style="cursor:pointer">홈</span><span class="bc-sep">›</span>
+          <span onclick="closeDetail()" style="cursor:pointer">주요 건물 안내</span><span class="bc-sep">›</span>
+          <span class="bc-cur">판교디지털미디어센터</span>
+        </div>
+      </div>
+      <div class="bld-detail-layout">
+        <div class="bld-detail-left">
+          <div class="bld-detail-main-img c8">💻</div>
+          <div class="bld-detail-thumbs">
+            <div class="bld-thumb-sm c8 active">💻</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+          </div>
+        </div>
+        <div class="bld-detail-right">
+          <div class="bld-detail-zone">판교테크노밸리 1단지</div>
+          <div class="bld-detail-name">판교디지털미디어센터</div>
+          <div class="bld-detail-tag-row"><span class="bld-detail-tag">#판교사무실</span><span class="bld-detail-tag">#판교테크노밸리사무실</span><span class="bld-detail-tag">#판교디지털센터</span></div>
+          <div class="info-table">
+            <div class="info-row"><span class="info-label">소재지</span><span class="info-value">경기 성남시 분당구 판교로 242 (삼평동 624)</span></div>
+            <div class="info-row"><span class="info-label">건물 용도</span><span class="info-value">업무시설</span></div>
+            <div class="info-row"><span class="info-label">건물 규모</span><span class="info-value">지하 3층 / 지상 10층</span></div>
+            <div class="info-row"><span class="info-label">임대 유형</span><span class="info-value">사무실 임대 · 매매</span></div>
+            <div class="info-row"><span class="info-label">입주 가능일</span><span class="info-value">즉시 가능 (매물별 상이)</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-detail-desc-title">건물 소개</div>
+          <p class="bld-detail-desc">디지털 콘텐츠·게임·바이오 등 IT업종 특화 센터로 총 3개동(A·B·C동)으로 구성됩니다. 첨단 업무 인프라를 갖춘 집합건물로 약 60여 개 기업이 입주해 있습니다.</p>
+          <div class="bld-hashtag-section">
+            <div class="bld-hashtag-title">관련 키워드</div>
+            <div class="bld-hashtags"><span class="bld-panel-tag">#판교사무실</span><span class="bld-panel-tag">#판교테크노밸리사무실</span><span class="bld-panel-tag">#판교디지털센터</span><span class="bld-panel-tag">#IT특화사무실</span><span class="bld-panel-tag">#게임회사임대</span><span class="bld-panel-tag">#디지털콘텐츠</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-consult-card">
+            <div class="bld-consult-title">이 건물에 관심 있으신가요?</div>
+            <p class="bld-consult-desc">조건을 알려주시면 당일 내 연락드리겠습니다.</p>
+            <div class="bld-consult-phones">
+              <div><span class="bld-phone-label">대표</span><span class="bld-phone-num">031-8016-9300</span></div>
+              <div><span class="bld-phone-label">직통</span><span class="bld-phone-num">010-3846-4555</span></div>
+            </div>
+            <div class="bld-consult-btns">
+              <button class="bld-btn-primary" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdb25AcUvY33NA39emnyORYnmshxmbcqDOaCl7tFaqxRL5u-w/viewform','_blank')">🔍 구하기 의뢰 접수하기</button>
+              <button class="bld-btn-outline" onclick="location.href='tel:031-8016-9300'">📞 전화 상담</button>
+            </div>
+          </div>
+          <div class="bld-similar-title">다른 건물 보기</div>
+          <div class="bld-similar-grid" id="similar-pdc"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bld-detail-page page" id="bld-detail-inno">
+      <div class="bld-detail-header">
+        <button class="bld-back-btn" onclick="closeDetail()">← 건물 목록으로</button>
+        <div class="bld-breadcrumb">
+          <span onclick="goHome()" style="cursor:pointer">홈</span><span class="bc-sep">›</span>
+          <span onclick="closeDetail()" style="cursor:pointer">주요 건물 안내</span><span class="bc-sep">›</span>
+          <span class="bc-cur">이노벨리</span>
+        </div>
+      </div>
+      <div class="bld-detail-layout">
+        <div class="bld-detail-left">
+          <div class="bld-detail-main-img c9">🔬</div>
+          <div class="bld-detail-thumbs">
+            <div class="bld-thumb-sm c9 active">🔬</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+          </div>
+        </div>
+        <div class="bld-detail-right">
+          <div class="bld-detail-zone">판교테크노밸리 1단지</div>
+          <div class="bld-detail-name">이노벨리</div>
+          <div class="bld-detail-tag-row"><span class="bld-detail-tag">#판교사무실</span><span class="bld-detail-tag">#판교테크노밸리사무실</span><span class="bld-detail-tag">#이노벨리</span></div>
+          <div class="info-table">
+            <div class="info-row"><span class="info-label">소재지</span><span class="info-value">경기 성남시 분당구 판교로 253 (삼평동 622)</span></div>
+            <div class="info-row"><span class="info-label">건물 용도</span><span class="info-value">업무시설</span></div>
+            <div class="info-row"><span class="info-label">건물 규모</span><span class="info-value">지하 3층 / 지상 10층</span></div>
+            <div class="info-row"><span class="info-label">임대 유형</span><span class="info-value">사무실 임대 · 매매</span></div>
+            <div class="info-row"><span class="info-label">입주 가능일</span><span class="info-value">즉시 가능 (매물별 상이)</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-detail-desc-title">건물 소개</div>
+          <p class="bld-detail-desc">혁신 기업과 벤처기업을 위한 IT특화 오피스 빌딩입니다. 테크노밸리 내 스타트업 생태계의 중심에 위치하며, 기술 창업 기업들에게 최적화된 업무 환경을 제공합니다.</p>
+          <div class="bld-hashtag-section">
+            <div class="bld-hashtag-title">관련 키워드</div>
+            <div class="bld-hashtags"><span class="bld-panel-tag">#판교사무실</span><span class="bld-panel-tag">#판교테크노밸리사무실</span><span class="bld-panel-tag">#이노벨리</span><span class="bld-panel-tag">#판교벤처사무실</span><span class="bld-panel-tag">#IT스타트업임대</span><span class="bld-panel-tag">#판교창업공간</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-consult-card">
+            <div class="bld-consult-title">이 건물에 관심 있으신가요?</div>
+            <p class="bld-consult-desc">조건을 알려주시면 당일 내 연락드리겠습니다.</p>
+            <div class="bld-consult-phones">
+              <div><span class="bld-phone-label">대표</span><span class="bld-phone-num">031-8016-9300</span></div>
+              <div><span class="bld-phone-label">직통</span><span class="bld-phone-num">010-3846-4555</span></div>
+            </div>
+            <div class="bld-consult-btns">
+              <button class="bld-btn-primary" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdb25AcUvY33NA39emnyORYnmshxmbcqDOaCl7tFaqxRL5u-w/viewform','_blank')">🔍 구하기 의뢰 접수하기</button>
+              <button class="bld-btn-outline" onclick="location.href='tel:031-8016-9300'">📞 전화 상담</button>
+            </div>
+          </div>
+          <div class="bld-similar-title">다른 건물 보기</div>
+          <div class="bld-similar-grid" id="similar-inno"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bld-detail-page page" id="bld-detail-svv">
+      <div class="bld-detail-header">
+        <button class="bld-back-btn" onclick="closeDetail()">← 건물 목록으로</button>
+        <div class="bld-breadcrumb">
+          <span onclick="goHome()" style="cursor:pointer">홈</span><span class="bc-sep">›</span>
+          <span onclick="closeDetail()" style="cursor:pointer">주요 건물 안내</span><span class="bc-sep">›</span>
+          <span class="bc-cur">세븐벤처밸리</span>
+        </div>
+      </div>
+      <div class="bld-detail-layout">
+        <div class="bld-detail-left">
+          <div class="bld-detail-main-img c10">🚀</div>
+          <div class="bld-detail-thumbs">
+            <div class="bld-thumb-sm c10 active">🚀</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+            <div class="bld-thumb-sm" style="background:#eee;display:flex;align-items:center;justify-content:center;color:#bbb;font-size:.72rem;">준비중</div>
+          </div>
+        </div>
+        <div class="bld-detail-right">
+          <div class="bld-detail-zone">판교테크노밸리 1단지</div>
+          <div class="bld-detail-name">세븐벤처밸리</div>
+          <div class="bld-detail-tag-row"><span class="bld-detail-tag">#판교사무실</span><span class="bld-detail-tag">#판교테크노밸리사무실</span><span class="bld-detail-tag">#세븐벤처밸리</span></div>
+          <div class="info-table">
+            <div class="info-row"><span class="info-label">소재지</span><span class="info-value">경기 성남시 분당구 판교로228번길 15 (삼평동 625)</span></div>
+            <div class="info-row"><span class="info-label">건물 용도</span><span class="info-value">업무시설 · 연구시설</span></div>
+            <div class="info-row"><span class="info-label">건물 규모</span><span class="info-value">지하 3층 / 지상 10층</span></div>
+            <div class="info-row"><span class="info-label">임대 유형</span><span class="info-value">사무실 임대 · 매매</span></div>
+            <div class="info-row"><span class="info-label">입주 가능일</span><span class="info-value">즉시 가능 (매물별 상이)</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-detail-desc-title">건물 소개</div>
+          <p class="bld-detail-desc">스타트업과 벤처기업을 위한 복합 업무·연구 시설입니다. 판교테크노밸리의 활발한 스타트업 생태계 중심에 위치하며, 소형~중형 사무실 매물이 다양하게 갖춰져 있습니다.</p>
+          <div class="bld-hashtag-section">
+            <div class="bld-hashtag-title">관련 키워드</div>
+            <div class="bld-hashtags"><span class="bld-panel-tag">#판교사무실</span><span class="bld-panel-tag">#판교테크노밸리사무실</span><span class="bld-panel-tag">#세븐벤처밸리</span><span class="bld-panel-tag">#판교스타트업사무실</span><span class="bld-panel-tag">#벤처기업임대</span><span class="bld-panel-tag">#판교소형사무실</span></div>
+          </div>
+          <div class="bld-detail-divider"></div>
+          <div class="bld-consult-card">
+            <div class="bld-consult-title">이 건물에 관심 있으신가요?</div>
+            <p class="bld-consult-desc">조건을 알려주시면 당일 내 연락드리겠습니다.</p>
+            <div class="bld-consult-phones">
+              <div><span class="bld-phone-label">대표</span><span class="bld-phone-num">031-8016-9300</span></div>
+              <div><span class="bld-phone-label">직통</span><span class="bld-phone-num">010-3846-4555</span></div>
+            </div>
+            <div class="bld-consult-btns">
+              <button class="bld-btn-primary" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdb25AcUvY33NA39emnyORYnmshxmbcqDOaCl7tFaqxRL5u-w/viewform','_blank')">🔍 구하기 의뢰 접수하기</button>
+              <button class="bld-btn-outline" onclick="location.href='tel:031-8016-9300'">📞 전화 상담</button>
+            </div>
+          </div>
+          <div class="bld-similar-title">다른 건물 보기</div>
+          <div class="bld-similar-grid" id="similar-svv"></div>
+        </div>
+      </div>
+    </div>
 
 <!-- FOOTER -->
 <footer>
