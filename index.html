@@ -375,6 +375,67 @@ footer{background:#080f1e;padding:2.5rem 4rem;border-top:1px solid rgba(201,168,
 .tel-popup.show{opacity:1;transform:translateX(-50%) translateY(0);}
 .tel-popup span{color:var(--gold);font-family:"Noto Serif KR",serif;font-size:1.05rem;}
 
+
+/* 히어로 임대인/임차인 분리 */
+.hero-split{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;max-width:680px;margin-top:1.5rem;}
+.hero-cta-box{
+  padding:1.3rem 1.5rem;
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(6px);
+  cursor:pointer;transition:all .25s;
+}
+.hero-cta-box:hover{background:rgba(201,168,76,.12);border-color:var(--gold);transform:translateY(-3px);}
+.hcb-label{font-size:.65rem;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.45rem;display:block;}
+.hcb-title{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.3rem;font-family:"Noto Serif KR",serif;line-height:1.4;}
+.hcb-desc{font-size:.75rem;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:.8rem;}
+.hcb-btn{font-size:.78rem;font-weight:600;}
+.hcb-btn-tenant{color:var(--gold);}
+.hcb-btn-landlord{color:rgba(255,255,255,.7);}
+
+/* 히어로 숫자 */
+.hero-nums{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.2rem;}
+.hn{text-align:center;}
+.hn-num{font-family:"Noto Serif KR",serif;font-size:1.8rem;color:var(--gold);font-weight:700;}
+.hn-unit{font-size:.85rem;}
+.hn-label{font-size:.68rem;color:rgba(255,255,255,.45);display:block;margin-top:.1rem;}
+.hn-div{width:1px;height:32px;background:rgba(255,255,255,.15);}
+
+/* About 섹션 */
+.about-sec{display:grid;grid-template-columns:380px 1fr;background:var(--navy);min-height:420px;}
+.about-photo{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 2rem;border-right:1px solid rgba(255,255,255,.07);gap:1rem;}
+.about-avatar{width:150px;height:150px;border-radius:50%;border:3px solid var(--gold);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:5rem;background:rgba(201,168,76,.1);}
+.about-avatar img{width:100%;height:100%;object-fit:cover;}
+.about-name{font-family:"Noto Serif KR",serif;color:var(--gold);font-size:1.1rem;text-align:center;}
+.about-role{color:rgba(255,255,255,.45);font-size:.78rem;text-align:center;}
+.about-txt-wrap{padding:4rem;display:flex;flex-direction:column;justify-content:center;}
+.about-tag2{color:var(--gold);font-size:.68rem;letter-spacing:2px;margin-bottom:.7rem;display:block;}
+.about-title2{font-family:"Noto Serif KR",serif;color:#fff;font-size:1.4rem;line-height:1.55;margin-bottom:1rem;}
+.about-title2 em{color:var(--gold);font-style:normal;}
+.about-desc2{color:rgba(255,255,255,.52);font-size:.86rem;line-height:2;margin-bottom:1.5rem;}
+.about-certs{display:flex;flex-wrap:wrap;gap:.4rem;}
+.cert-tag{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);color:var(--gold);font-size:.7rem;padding:4px 11px;}
+
+/* 후기 섹션 */
+.review-sec{padding:5rem 4rem;background:var(--cream);}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem;}
+.review-card{background:#fff;padding:1.8rem;border:1px solid var(--border);position:relative;}
+.review-card::before{content:'"';position:absolute;top:.8rem;left:1.2rem;font-size:3rem;color:var(--gold);font-family:"Noto Serif KR",serif;line-height:1;opacity:.3;}
+.review-text{font-size:.85rem;color:#444;line-height:1.9;margin-bottom:1.2rem;padding-top:1.5rem;}
+.review-from{display:flex;align-items:center;gap:.6rem;border-top:1px solid var(--border);padding-top:.9rem;}
+.review-icon{width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;}
+.review-name{font-size:.8rem;font-weight:600;color:var(--navy);}
+.review-type{font-size:.7rem;color:var(--gray);}
+.review-stars{color:var(--gold);font-size:.75rem;margin-top:.1rem;}
+
+@media(max-width:768px){
+  .hero-split{grid-template-columns:1fr;}
+  .about-sec{grid-template-columns:1fr;}
+  .about-photo{padding:2rem;}
+  .review-grid{grid-template-columns:1fr;}
+  .review-sec{padding:3rem 1.2rem;}
+}
+
 </style>
 </head>
 <body>
@@ -548,6 +609,65 @@ footer{background:#080f1e;padding:2.5rem 4rem;border-top:1px solid rgba(201,168,
   </div>
 
   
+
+
+  <!-- ══ About 소장님 소개 ══ -->
+  <div class="about-sec" id="page-about">
+    <div class="about-photo">
+      <div class="about-avatar">👤</div>
+      <div class="about-name">신큰별 대표</div>
+      <div class="about-role">공인중개사 · 판교테크노밸리 전문</div>
+    </div>
+    <div class="about-txt-wrap">
+      <span class="about-tag2">ABOUT</span>
+      <h2 class="about-title2">
+        판교테크노밸리 <em>현장 10년</em>,<br>
+        직접 발로 뛴 전문가입니다
+      </h2>
+      <p class="about-desc2">
+        유스페이스2 108호에 직접 입주해<br>
+        판교테크노밸리 상가·사무실만 10년 이상 전담했습니다.<br>
+        200건 이상의 계약 경험으로 고객의 조건에 딱 맞는<br>
+        공간을 빠르고 투명하게 찾아드립니다.
+      </p>
+      <div class="about-certs">
+        <span class="cert-tag">공인중개사</span>
+        <span class="cert-tag">중개사등록 41135-2023-00001</span>
+        <span class="cert-tag">판교테크노밸리 10년+</span>
+        <span class="cert-tag">유스페이스2 직접 입주</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 고객 후기 ══ -->
+  <div class="review-sec">
+    <span class="sec-tag">REVIEWS</span>
+    <h2 class="sec-title">고객 <em>후기</em></h2>
+    <p class="sec-desc">실제 거래를 완료한 고객분들의 소감입니다.</p>
+    <div class="review-grid">
+      <div class="review-card">
+        <p class="review-text">판교 이전을 고민하던 중 연락했는데, 당일 바로 연락주시고 조건에 딱 맞는 매물을 3개나 추천해 주셨어요. 빠르고 정확한 안내 덕분에 원하는 사무실로 이전할 수 있었습니다.</p>
+        <div class="review-from">
+          <div class="review-icon">🏢</div>
+          <div><div class="review-name">IT스타트업 A사 대표</div><div class="review-type">유스페이스1 사무실 임대</div><div class="review-stars">★★★★★</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <p class="review-text">공실이 3개월 넘게 안 나가서 걱정했는데 의뢰 후 2주 만에 임차인을 연결해 주셨습니다. 판교 시장을 정말 잘 아시는 분이에요.</p>
+        <div class="review-from">
+          <div class="review-icon">🏪</div>
+          <div><div class="review-name">상가 임대인 B씨</div><div class="review-type">삼환하이펙스 상가 임대</div><div class="review-stars">★★★★★</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <p class="review-text">이전 여러 부동산에서 안 된다던 매물을 소장님께서 해결해 주셨어요. 현장에 계시니까 정보가 빠르고 믿음이 가는 분입니다.</p>
+        <div class="review-from">
+          <div class="review-icon">💼</div>
+          <div><div class="review-name">바이오기업 C사</div><div class="review-type">H스퀘어 사무실 매매</div><div class="review-stars">★★★★★</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- 구하기/내놓기 의뢰 CTA -->
   <div class="req-cta">
@@ -1231,6 +1351,20 @@ footer{background:#080f1e;padding:2.5rem 4rem;border-top:1px solid rgba(201,168,
 <div style="position:fixed;bottom:2rem;right:1.5rem;z-index:9999;display:flex;flex-direction:column;align-items:center;gap:.6rem;">
 
   <!-- 상담 신청 -->
+  <!-- 카카오 상담 -->
+  <div onclick="window.open('https://open.kakao.com/o/XXXXXXXX','_blank')"
+    id="kakaoBtn"
+    title="카카오 상담"
+    style="width:58px;height:58px;border-radius:50%;background:#FEE500;color:#3C1E1E;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    cursor:pointer;box-shadow:0 2px 16px rgba(254,229,0,.5);
+    border:none;transition:all .22s;text-align:center;line-height:1.3;"
+    onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 22px rgba(254,229,0,.7)'"
+    onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 16px rgba(254,229,0,.5)'">
+    <span style="font-size:1.25rem;margin-bottom:2px;">💬</span>
+    <span style="font-size:.5rem;font-weight:700;color:#3C1E1E;">카카오<br>상담</span>
+  </div>
+
   <div onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdOb1gNVko47aT-2AnafBzRxGXAUp6Kt_k8fI3Ug1HeQiZTCA/viewform','_blank')"
     title="상담 신청"
     style="width:82px;height:82px;border-radius:50%;background:#ffffff;color:#0f1f3d;
